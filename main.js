@@ -5,6 +5,11 @@ const { keyboard, Key } = require('@nut-tree/nut-js');
 
 const app = express();
 
+async function press(key) {
+    await keyboard.pressKey(key);
+    await keyboard.releaseKey(key);
+}
+
 app.use(cors());
 app.use(express.static('views'))
 
@@ -13,36 +18,31 @@ app.get('/', (req, res) => {
 })
 
 app.post('/ileri', async (req, res) => {
-    await keyboard.pressKey(Key.Right);
-    await keyboard.releaseKey(Key.Right);
+    await press(Key.Right);
     console.log('ileri');
     res.status(200).send('ok');
 })
 
 app.post('/bosluk', async (req, res) => {
-    await keyboard.pressKey(Key.Space);
-    await keyboard.releaseKey(Key.Space);
+    await press(Key.Space);
     console.log('bosluk');
     res.status(200).send('ok');
 })
 
 app.post('/geri', async (req, res) => {
-    await keyboard.pressKey(Key.Left);
-    await keyboard.releaseKey(Key.Left);
+    await press(Key.Left);
     console.log('geri');
     res.status(200).send('ok');
 })
 
 app.post('/yukari', async (req, res) => {
-    await keyboard.pressKey(Key.Up);
-    await keyboard.releaseKey(Key.Up);
+    await press(Key.Up);
     console.log('yukarı');
     res.status(200).send('ok');
 })
 
 app.post('/asagi', async (req, res) => {
-    await keyboard.pressKey(Key.Down);
-    await keyboard.releaseKey(Key.Down);
+    await press(Key.Down);
     console.log('aşağı');
     res.status(200).send('ok');
 })

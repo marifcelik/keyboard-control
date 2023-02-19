@@ -6,7 +6,8 @@
   "bin": "main.js",
   "scripts": {
     "start": "node main.js",
-    "dev": "nodemon"
+    "dev": "nodemon",
+    "build": "pkg -t latest-linux-x64 ."
   },
   "keywords": [],
   "author": "",

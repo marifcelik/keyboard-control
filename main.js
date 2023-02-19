@@ -36,13 +36,13 @@ app.post('/geri', (req, res) => {
 })
 
 app.post('/yukari', (req, res) => {
-    press(Key.Up);
+    press(Key.AudioVolUp);
     console.log('yukarı');
     res.status(200).send('ok');
 })
 
 app.post('/asagi', (req, res) => {
-    press(Key.Down);
+    press(Key.AudioVolDown);
     console.log('aşağı');
     res.status(200).send('ok');
 })
